@@ -1,0 +1,37 @@
+# Общие исключения для всех проектов
+node_modules/
+dist/
+.env
+.DS_Store
+*.log
+*.lock
+*.cache
+
+# Исключения для backend (Express)
+backend/node_modules/
+backend/.env
+backend/logs/
+backend/temp/
+backend/*.log
+backend/debug/
+backend/.cache
+
+# Исключения для client (React)
+client/node_modules/
+client/.env
+client/build/
+client/.next/
+client/public/static/
+client/coverage/
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+# Исключения для IDE/редакторов
+.vscode/
+.idea/
+*.swp
+
+# Исключения для операционных систем
+Thumbs.db
+desktop.ini

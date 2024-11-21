@@ -1,0 +1,624 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #bbc7ce;
+}
+/* Navbar.css */
+.navbar {
+  position: absolute; /* Position absolute */
+  top: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  height: 70px;
+  width: 100%; /* Full width */
+  background-color: #282c34; /* Dark background */
+  color: white; /* White text */
+  padding: 10px 10px; /* Padding for top and bottom */
+  text-align: center; /* Centered text */
+  z-index: 1000; /* Ensure it's above other content */
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar ul {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  display: flex; /* Flexbox layout */
+  justify-content: center;
+  vertical-align: middle;
+  margin: auto;
+  font-size: 16px;
+}
+
+.navbar li {
+  margin-right: 20px; /* Spacing between items */
+}
+
+.navbar a {
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+}
+
+.navbar a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+.navbar-logo,
+.navbar-logo img {
+  height: 50px;
+  width: 50px;
+}
+.footer {
+  background-color: #282c34; /* Dark background */
+  color: white; /* White text */
+  padding: 20px 0; /* Padding for top and bottom */
+  text-align: center; /* Centered text */
+}
+
+.footer {
+  position: absolute; /* Position absolute */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  background-color: #282c34; /* Dark background */
+  color: white; /* White text */
+  padding: 10px 0; /* Padding for top and bottom */
+  text-align: center; /* Centered text */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Styling for the login container */
+.login-container {
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Headline for the login form */
+.login-container h2,
+.user-role label {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Input field styles */
+.login-container input[type="text"],
+.login-container input[type="password"],
+.user-role select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.user-role {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Button styles */
+.test-container button,
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #45a049;
+}
+
+/* Error message styles */
+.login-container p {
+  color: red;
+  font-size: 14px;
+}
+/* Link styles */
+.link-login {
+  margin: 20px 0;
+}
+
+.link-login a {
+  color: #4caf50;
+  text-decoration: none;
+}
+/* Add these styles to login.css */
+
+/* Style for password strength feedback */
+.password-strength {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.password-strength.easy {
+  color: orange;
+}
+
+.password-strength.medium {
+  color: blue;
+}
+
+.password-strength.high {
+  color: green;
+}
+
+/* Password error animation */
+.password-error {
+  border: 1px solid red;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Error text styling */
+.error-text {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.box-shadow {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.border-radius {
+  border-radius: 8px;
+}
+
+/* Common Form Styles */
+.form-container {
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.test-button button,
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.test-button button:hover,
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+/* Error Message Styles */
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+.question {
+  margin: 15px 0;
+}
+
+.response-options label {
+  margin: 0 5px;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.results p {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+.test-container,
+.collection-details-container {
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 70em;
+  height: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.collection-details-container h2 {
+  margin: 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Collection Styles */
+.collections-container,
+.collection-details-container {
+  background-color: #f0f4f2; /* Light gray-green background */
+  padding: 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 70em;
+  height: 600px;
+  margin: 20px auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Header Styles for the collections */
+.collections-container h2,
+.collection-details-container h2 {
+  font-size: 26px;
+  color: #333;
+  border-bottom: 2px solid #a2c3ac; /* Greenish underline */
+  padding-bottom: 10px;
+}
+
+/* Collection List */
+.collections-container ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.collections-container li {
+  margin: 12px 0 20px 0;
+  font-size: 18px;
+}
+/* Collection Links */
+.collections-container a,
+.link a,
+.propper {
+  text-decoration: none;
+  color: #4caf50; /* Green text */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 15px;
+  background-color: #f0f4f2;
+  border: 2px solid #4caf50;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.collections-container a {
+  display: inline-block;
+  height: 40px;
+  width: 200px;
+}
+.propper,
+.notPropper {
+  text-align: center;
+}
+.details-and-form-container-table .propper {
+  border: 2px solid #4caf50;
+}
+.details-and-form-container-table .notPropper {
+  border: 2px solid #b80c09;
+}
+.details-and-form-container-table-edit a {
+  border: none;
+}
+.details-and-form-container-table-delete button,
+.notPropper {
+  text-decoration: none;
+  border: 2px solid #b80c09;
+  color: #b80c09;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 15px;
+  background-color: #f0f4f2;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.details-and-form-container-table-delete button:hover,
+.notPropper {
+  color: #fff;
+  background-color: #b80c09;
+}
+.propper,
+.collections-container a:hover,
+.link a:hover {
+  color: #fff;
+  background-color: #4caf50; /* Invert colors on hover */
+}
+
+/* Collection Return Link */
+.return-link {
+  display: block;
+  margin-bottom: 20px;
+  color: #4caf50;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 2px solid #4caf50;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.return-link:hover {
+  color: white;
+  background-color: #4caf50;
+}
+
+/* Animation for Fade-In Effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Collection Details Table */
+.collection-details-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.details-and-form-container-table {
+  height: 300px;
+  overflow-y: scroll;
+}
+.collection-details-container th,
+.collection-details-container td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.collection-details-container th {
+  background-color: #f4f4f4;
+}
+
+.collection-details-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.collection-details-container tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Edit Document Styles */
+.edit-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px auto;
+  width: 400px;
+}
+.buttons {
+  flex-direction: row;
+}
+.command {
+  justify-content: center;
+}
+.edit-details-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-details-container form div {
+  margin-bottom: 15px;
+}
+.edit-details-container-form {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.edit-details-container label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.edit-details-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-details-container button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 15em;
+  height: 4em;
+  margin: auto;
+}
+
+.edit-details-container button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 800px) {
+  .details-and-form-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .edit-details-container {
+    width: 100%; /* Make form take full width on smaller screens */
+    max-width: none; /* Remove max-width restriction */
+  }
+
+  .collection-details-container {
+    padding: 20px;
+  }
+
+  .collection-details-container h2 {
+    font-size: 20px;
+  }
+
+  .collection-details-container th,
+  .collection-details-container td {
+    font-size: 14px;
+  }
+}
+
+/* Delete Button Styles */
+.delete-btn {
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 16px;
+  color: blue;
+}
+
+/* Modal Overlay Styles */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Keyframes for left-to-right sliding effect */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* End at the normal position */
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0); /* Start at the normal position */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen to the left */
+    opacity: 0;
+  }
+}
+
+/* Modal Window Styles */
+.modal {
+  background-color: #f0f4f2; /* Light gray-green background */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 230px;
+  transition: transform 0.3s ease;
+  text-align: center;
+  animation: slideInFromLeft 0.5s ease forwards; /* Apply sliding in effect */
+}
+
+.modal.exit {
+  animation: slideOutToLeft 0.5s ease forwards; /* Apply sliding out effect */
+}
+
+/* Modal Heading Styles */
+.modal h2 {
+  margin-bottom: 15px;
+  color: #333; /* Darker text for contrast */
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.rank {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+}
+/* Modal Button Styles */
+.modal button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.modal button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+.edit-details-container-submit-btn {
+  width: 100%;
+}
+.edit-details-container-close-btn {
+  width: 50%;
+  margin: auto;
+}
