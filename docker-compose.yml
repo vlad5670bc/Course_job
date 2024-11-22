@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   node-server:
+    container_name: node-server
     build:
       context: ./backend
     ports:
@@ -9,37 +10,41 @@ services:
     env_file:
       - ./backend/.env
     depends_on:
-      - db
+      - mongo
     restart: on-failure
     networks:
       - my-network
 
   react-app:
+    container_name: react-app
     build:
-      context: ./frontend
+      context: ./client
     ports:
       - '80:80'
     env_file:
-      - ./frontend/.env
+      - ./client/.env
     depends_on:
       - node-server
     restart: on-failure
     networks:
       - my-network
-  db:
-    image: mysql:8
+
+  mongo:
+    image: mongo:6
+    container_name: mongodb
     ports:
-      - '3307:3307'
+      - '27017:27017'
     env_file:
-      - .env
-#    volumes:
-#      - db-data:/var/lib/mysql
-#      - ./init.db:/docker-entrypoint-initdb.d/init.db
+      - .env.mongo
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+      - mongo-data:/data/db
     networks:
       - my-network
 
 volumes:
-  db-data:
+  mongo-data:
 
 networks:
   my-network:
+    driver: bridge

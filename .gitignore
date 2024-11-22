@@ -35,3 +35,4 @@ client/yarn-error.log*
 # Исключения для операционных систем
 Thumbs.db
 desktop.ini
+.env.mongo
