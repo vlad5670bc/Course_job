@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  node-server:
+    build:
+      context: ./backend
+    ports:
+      - '5000:5000'
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+    restart: on-failure
+    networks:
+      - my-network
+
+  react-app:
+    build:
+      context: ./frontend
+    ports:
+      - '80:80'
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - node-server
+    restart: on-failure
+    networks:
+      - my-network
+  db:
+    image: mysql:8
+    ports:
+      - '3307:3307'
+    env_file:
+      - .env
+#    volumes:
+#      - db-data:/var/lib/mysql
+#      - ./init.db:/docker-entrypoint-initdb.d/init.db
+    networks:
+      - my-network
+
+volumes:
+  db-data:
+
+networks:
+  my-network:
